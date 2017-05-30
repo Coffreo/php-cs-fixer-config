@@ -1,5 +1,7 @@
 GITLAB_CI?=false
 
+$(warning $(GITLAB_CI))
+
 COMPOSER_UPDATE_COMMAND=composer self-update
 PHPUNIT_FLAGS=
 CS_FLAGS=
