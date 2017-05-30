@@ -2,37 +2,47 @@
 # /!\ All commands are executed on runners host directly (executor=shell).
 # Please be careful to lxc-attach all the commands you want to run.
 #
+variables:
+  GIT_CREDENTIAL: "master"
+
 stages:
+  - split
   - build
   - test
   - version
 
 before_script:
-  - /usr/share/lxc/ci-utils/bin/lxc-install.sh
+  - /usr/share/lxc/ci-utils-cmery/bin/lxc-install.sh
 
 after_script:
-  - /usr/share/lxc/ci-utils/bin/lxc-uninstall.sh
+  - /usr/share/lxc/ci-utils-cmery/bin/lxc-uninstall.sh
+
+# automate splitting to READ-ONLY repositories
+Split:
+  stage: split
+  script:
+      - /usr/share/lxc/ci-utils-cmery/bin/lxc-actions.sh -a "split"
+  except:
+    - master
 
 # build stage is intended to install dependencies needed by the project
 Build:
   stage: build
   script:
-    - /usr/share/lxc/ci-utils/bin/lxc-actions.sh -a "clone-build"
-  only:
-    - develop
+    - /usr/share/lxc/ci-utils-cmery/bin/lxc-actions.sh -a "clone-build"
 
 # test stage is intended to run unit tests
 Test:
   stage: test
   script:
-    - /usr/share/lxc/ci-utils/bin/lxc-actions.sh -a "test-ci"
+    - /usr/share/lxc/ci-utils-cmery/bin/lxc-actions.sh -a "test-ci"
   only:
     - develop
 
 BumpVersionDev_patch:
   stage: version
   script:
-    - /usr/share/lxc/ci-utils/bin/lxc-actions.sh -a "BumpVersionDev_patch"
+    - /usr/share/lxc/ci-utils-cmery/bin/lxc-actions.sh -a "BumpVersionDev_patch"
   when: manual
   only:
     - develop
@@ -40,7 +50,7 @@ BumpVersionDev_patch:
 BumpVersionDev_minor:
   stage: version
   script:
-    - /usr/share/lxc/ci-utils/bin/lxc-actions.sh -a "BumpVersionDev_minor"
+    - /usr/share/lxc/ci-utils-cmery/bin/lxc-actions.sh -a "BumpVersionDev_minor"
   when: manual
   only:
     - develop
@@ -48,7 +58,7 @@ BumpVersionDev_minor:
 BumpVersionDev_major:
   stage: version
   script:
-    - /usr/share/lxc/ci-utils/bin/lxc-actions.sh -a "BumpVersionDev_major"
+    - /usr/share/lxc/ci-utils-cmery/bin/lxc-actions.sh -a "BumpVersionDev_major"
   when: manual
   only:
     - develop
@@ -57,6 +67,6 @@ BumpVersionDev_major:
 BumpVersion:
   stage: version
   script:
-    - /usr/share/lxc/ci-utils/bin/lxc-actions.sh -a "BumpVersion"
+    - /usr/share/lxc/ci-utils-cmery/bin/lxc-actions.sh -a "BumpVersion-and-split"
   only:
     - master
