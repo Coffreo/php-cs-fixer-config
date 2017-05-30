@@ -1,0 +1,5 @@
+.php_cs.cache
+composer.lock
+npm-debug.log
+/test/coverage/
+/vendor/
