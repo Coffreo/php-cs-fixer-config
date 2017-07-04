@@ -30,6 +30,8 @@ Build:
   stage: build
   script:
     - /usr/share/lxc/ci-utils/bin/lxc-actions.sh -a "clone-build"
+  except:
+    - master
 
 # test stage is intended to run unit tests
 Test:
