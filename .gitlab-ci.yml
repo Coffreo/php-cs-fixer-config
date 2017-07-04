@@ -2,7 +2,11 @@
 # /!\ All commands are executed on runners host directly (executor=shell).
 # Please be careful to lxc-attach all the commands you want to run.
 #
+variables:
+  GIT_CREDENTIAL: "master"
+
 stages:
+  - split
   - build
   - test
   - version
@@ -13,13 +17,19 @@ before_script:
 after_script:
   - /usr/share/lxc/ci-utils/bin/lxc-uninstall.sh
 
+# automate splitting to READ-ONLY repositories
+Split:
+  stage: split
+  script:
+      - /usr/share/lxc/ci-utils/bin/lxc-actions.sh -a "split"
+  except:
+    - master
+
 # build stage is intended to install dependencies needed by the project
 Build:
   stage: build
   script:
     - /usr/share/lxc/ci-utils/bin/lxc-actions.sh -a "clone-build"
-  only:
-    - develop
 
 # test stage is intended to run unit tests
 Test:
@@ -57,6 +67,6 @@ BumpVersionDev_major:
 BumpVersion:
   stage: version
   script:
-    - /usr/share/lxc/ci-utils/bin/lxc-actions.sh -a "BumpVersion"
+    - /usr/share/lxc/ci-utils/bin/lxc-actions.sh -a "BumpVersion-and-split"
   only:
     - master
