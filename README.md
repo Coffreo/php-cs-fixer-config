@@ -92,3 +92,14 @@ $ make test   # run PHPUnit test suite
 $ make cs     # Apply CS to source code (THIS MUST BE DONE BEFORE PUSHING)
 $ make        # lazy ? execute both above commands
 ```
+
+## FAQ
+
+* I've installed everything but it keeps me warning that few rules are inexistents.
+
+> You get thie error messager because the version of `friendsofphp/php-cs-fixer` is not appropriate 
+with selected rules set. Two potentials causes:
+>  * Ensure your ruleset is compatible with your PHP version (56 for 5.6, 70 for 7.0, etc...)
+>  * Check your composer.json for `config.platform` key. It should either be undefined or the correct value 
+depending on your PHP version. The presence of this config key force composer to install cs-fixer 
+version related to PHP version defined by this key, ignoring real current version of PHP.)
