@@ -97,7 +97,7 @@ $ make        # lazy ? execute both above commands
 
 * I've installed everything but it keeps me warning that few rules are inexistents.
 
-> You get thie error messager because the version of `friendsofphp/php-cs-fixer` is not appropriate 
+> You get thie error message because the version of `friendsofphp/php-cs-fixer` is not appropriate 
 with selected rules set. Two potentials causes:
 >  * Ensure your ruleset is compatible with your PHP version (56 for 5.6, 70 for 7.0, etc...)
 >  * Check your composer.json for `config.platform` key. It should either be undefined or the correct value 
