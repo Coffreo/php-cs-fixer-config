@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This file is part of Coffreo project "coffreo-toolbox/php-cs-fixer-config".
+ * This file is part of Coffreo project "coffreo-toolbox/php-cs-fixer-config"
  *
  * (c) Coffreo SAS <contact@coffreo.com> - All Rights Reserved
  *
