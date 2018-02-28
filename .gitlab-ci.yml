@@ -38,6 +38,8 @@ Test:
   stage: test
   script:
     - /usr/share/lxc/ci-utils/bin/lxc-actions.sh -a "test-ci"
+  except:
+    - master
 
 BumpVersionDev_patch:
   stage: version
