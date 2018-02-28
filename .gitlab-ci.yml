@@ -29,7 +29,7 @@ Split:
 Build:
   stage: build
   script:
-    - /usr/share/lxc/ci-utils/bin/lxc-actions.sh -a "clone-build"
+    - /usr/share/lxc/ci-utils/bin/lxc-actions.sh -a "basic-php"
   except:
     - master
 
@@ -38,8 +38,6 @@ Test:
   stage: test
   script:
     - /usr/share/lxc/ci-utils/bin/lxc-actions.sh -a "test-ci"
-  only:
-    - develop
 
 BumpVersionDev_patch:
   stage: version
