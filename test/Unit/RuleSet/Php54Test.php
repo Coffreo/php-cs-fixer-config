@@ -83,7 +83,7 @@ final class Php54Test extends AbstractRuleSetTestCase
             'random_api_migration' => false,
             'semicolon_after_instruction' => true,
             'silenced_deprecation_error' => false,
-            'simplified_null_return' => true,
+            'simplified_null_return' => false,
             'strict_comparison' => false,
             'strict_param' => false,
             'ternary_to_null_coalescing' => false,

@@ -67,7 +67,7 @@ final class Php70 extends AbstractRuleSet
         'psr4' => false,
         'semicolon_after_instruction' => true,
         'silenced_deprecation_error' => false,
-        'simplified_null_return' => true,
+        'simplified_null_return' => false,
         'strict_comparison' => true,
         'strict_param' => true,
         'visibility_required' => [
