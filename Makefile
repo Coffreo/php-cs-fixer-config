@@ -3,7 +3,7 @@ GITLAB_CI?=false
 COMPOSER_UPDATE_COMMAND=composer self-update
 PHPUNIT_FLAGS=
 CS_FLAGS=
-ifeq ($(GITLAB_CI),true)
+ifeq ($(TRAVIS_CI),true)
 	COMPOSER_UPDATE_COMMAND=
 	CS_FLAGS=--dry-run --stop-on-violation --using-cache=no
 	PHPUNIT_FLAGS=--coverage-text --colors=never
