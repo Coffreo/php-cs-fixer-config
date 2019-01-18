@@ -1,5 +1,5 @@
 {
-    "name": "coffreo-toolbox/php-cs-fixer-config",
+    "name": "coffreo/php-cs-fixer-config",
     "description": "Provides a configuration factory and multiple Coffreo rule sets for friendsofphp/php-cs-fixer.",
     "type": "library",
     "license": "MIT",

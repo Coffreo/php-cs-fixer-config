@@ -14,7 +14,7 @@ This repository provides a configuration factory and multiple Coffreo rule sets 
 Run
 
 ```sh
-$ composer require --dev coffreo-toolbox/php-cs-fixer-config
+$ composer require --dev coffreo/php-cs-fixer-config
 ```
 
 ## Usage
