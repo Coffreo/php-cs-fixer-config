@@ -1,5 +1,3 @@
-GITLAB_CI?=false
-
 COMPOSER_UPDATE_COMMAND=composer self-update
 PHPUNIT_FLAGS=
 CS_FLAGS=
@@ -19,7 +17,7 @@ composer:
 	composer update
 
 cs: composer
-	vendor/bin/php-cs-fixer fix --config=.php_cs --verbose --diff $(CS_FLAGS)
+	vendor/bin/php-cs-fixer fix --verbose --diff $(CS_FLAGS)
 
 test: composer
 	vendor/bin/phpunit $(PHPUNIT_FLAGS)
