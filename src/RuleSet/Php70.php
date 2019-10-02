@@ -1,11 +1,12 @@
 <?php
 
 /**
- * This file is part of Coffreo project "coffreo-toolbox/php-cs-fixer-config"
+ * This file is part of Coffreo project "coffreo/php-cs-fixer-config"
  *
- * (c) Coffreo SAS <contact@coffreo.com> - All Rights Reserved
+ * (c) Coffreo SAS <contact@coffreo.com>
  *
- * This source file is subject to the proprietary license.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace Coffreo\PhpCsFixer\Config\RuleSet;

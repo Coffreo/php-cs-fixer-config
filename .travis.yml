@@ -1,0 +1,11 @@
+language: php
+php:
+  - "5.6"
+#  - "7.2"
+env:
+  - TRAVIS_CI=true
+install:
+  - make composer
+script:
+  - make cs
+  - make test
