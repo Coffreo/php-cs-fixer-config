@@ -3,5 +3,3 @@ composer.lock
 npm-debug.log
 /test/coverage/
 /vendor/
-
-.idea/
