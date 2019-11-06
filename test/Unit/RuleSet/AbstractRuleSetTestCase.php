@@ -203,9 +203,7 @@ abstract class AbstractRuleSetTestCase extends Framework\TestCase
             return;
         }
 
-        throw new \PHPUnit_Framework_SkippedTestError(sprintf(
-            'This test cannot be executed because current PHP-CS-FIXER version "%s" did not match current "%s" expected cs-fixer.',
-            Application::VERSION, $this->className()));
+        throw new \PHPUnit_Framework_SkippedTestError(sprintf('This test cannot be executed because current PHP-CS-FIXER version "%s" did not match current "%s" expected cs-fixer.', Application::VERSION, $this->className()));
     }
 
     /**

@@ -16,8 +16,6 @@ use PhpCsFixer\Config;
 final class Factory
 {
     /**
-     * @param RuleSet $ruleSet
-     *
      * @throws \RuntimeException
      *
      * @return Config
@@ -25,11 +23,7 @@ final class Factory
     public static function fromRuleSet(RuleSet $ruleSet)
     {
         if (PHP_VERSION_ID < $ruleSet->targetPhpVersion()) {
-            throw new \RuntimeException(\sprintf(
-                'Current PHP version "%s is less than targeted PHP version "%s".',
-                PHP_VERSION_ID,
-                $ruleSet->targetPhpVersion()
-            ));
+            throw new \RuntimeException(\sprintf('Current PHP version "%s is less than targeted PHP version "%s".', PHP_VERSION_ID, $ruleSet->targetPhpVersion()));
         }
 
         $config = new Config($ruleSet->name());
