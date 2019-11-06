@@ -28,6 +28,7 @@ Pick one of the rule sets:
 * `Coffreo\PhpCsFixer\RuleSet\Php56`
 * `Coffreo\PhpCsFixer\RuleSet\Php70`
 * `Coffreo\PhpCsFixer\RuleSet\Php71`
+* `Coffreo\PhpCsFixer\RuleSet\Php72`
 
 :ledger: All configuration (except `Php54To56`) include `@Symfony` and `@PSR2` rules.
 
