@@ -23,12 +23,12 @@ $ composer require --dev coffreo/php-cs-fixer-config
 
 Pick one of the rule sets:
 
-* `Coffreo\PhpCsFixer\RuleSet\Php54` (includes migration 5.6 rules)
-* `Coffreo\PhpCsFixer\RuleSet\Php54To56` (includes ONLY migration 5.6 rules)
-* `Coffreo\PhpCsFixer\RuleSet\Php56`
-* `Coffreo\PhpCsFixer\RuleSet\Php70`
-* `Coffreo\PhpCsFixer\RuleSet\Php71`
-* `Coffreo\PhpCsFixer\RuleSet\Php72`
+* `Coffreo\PhpCsFixer\Config\RuleSet\Php54` (includes migration 5.6 rules)
+* `Coffreo\PhpCsFixer\Config\RuleSet\Php54To56` (includes ONLY migration 5.6 rules)
+* `Coffreo\PhpCsFixer\Config\RuleSet\Php56`
+* `Coffreo\PhpCsFixer\Config\RuleSet\Php70`
+* `Coffreo\PhpCsFixer\Config\RuleSet\Php71`
+* `Coffreo\PhpCsFixer\Config\RuleSet\Php72`
 
 :ledger: All configuration (except `Php54To56`) include `@Symfony` and `@PSR2` rules.
 
