@@ -59,7 +59,7 @@ final class Php72Test extends AbstractRuleSetTestCase
             'list_syntax' => [
                 'syntax' => 'short',
             ],
-            'mb_str_functions' => true,
+            'mb_str_functions' => false,
             'modernize_types_casting' => true,
             'native_function_invocation' => true,
             'no_alias_functions' => true,

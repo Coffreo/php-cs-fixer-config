@@ -40,7 +40,7 @@ final class Php70 extends AbstractRuleSet
         ],
         'linebreak_after_opening_tag' => true,
         'list_syntax' => false,
-        'mb_str_functions' => true,
+        'mb_str_functions' => false,
         'modernize_types_casting' => true,
         'native_function_invocation' => true,
         'no_alias_functions' => true,
